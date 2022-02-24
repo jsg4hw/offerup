@@ -6,53 +6,39 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Title</dt>
-      <!-- Display title start -->
       <dd><%= item.title %></dd>
-      <!-- Display title end -->
 
       <dt>Price</dt>
-      <!-- Display price start -->
       <dd><%= item.price %></dd>
-      <!-- Display price end -->
 
       <dt>Category</dt>
-      <!-- Display category_id start -->
       <dd>
         <% if @item.category.present? %>
           <%= link_to item.category, item.category %>
         <% end %>
       </dd>
-      <!-- Display category_id end -->
 
       <dt>User</dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @item.user.present? %>
           <%= link_to item.user, item.user %>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>Image</dt>
-      <!-- Display image start -->
       <dd>
         <%= cl_image_tag @item.image, class: "img-fluid" %>
       </dd>
-      <!-- Display image end -->
 
       <dt>Item location</dt>
-      <!-- Display item_location start -->
       <dd>
         <div>
           <%= render partial: "items/one_photo_map" %>
         </div>
       </dd>
-      <!-- Display item_location end -->
 
       <dt>Purchased</dt>
-      <!-- Display purchased start -->
       <dd><%= item.purchased %></dd>
-      <!-- Display purchased end -->
 
     </dl>
 
@@ -61,7 +47,6 @@
         <%= link_to_show_or_back item, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link item start -->
       <div class="col">
         <% if current_user == @item.user %>
           <%= link_to edit_item_url(item), class: "btn btn-block btn-sm btn-outline-secondary" do %>
@@ -69,9 +54,7 @@
           <% end %>
         <% end %>
       </div>
-      <!-- Edit link item end -->
 
-      <!-- Delete link item start -->
       <div class="col">
         <% if current_user == @item.user %>
           <%= link_to item, method: :delete, data: { confirm: "Do you really want to delete this item?" }, class: "btn btn-block btn-outline-secondary" do %>
@@ -79,7 +62,6 @@
           <% end %>
         <% end %>
       </div>
-      <!-- Delete link item end -->
     </div>
   </div>
 
