@@ -27,7 +27,9 @@
 
       <dt>Image</dt>
       <!-- Display image start -->
-      <dd><%= item.image %></dd>
+      <dd>
+        <%= cl_image_tag @item.image, class: "img-fluid" %>
+      </dd>
       <!-- Display image end -->
 
       <dt>Item location</dt>
