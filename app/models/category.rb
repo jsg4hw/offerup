@@ -2,7 +2,7 @@ class Category < ApplicationRecord
   # Direct associations
 
   has_many   :items,
-             :dependent => :nullify
+             dependent: :nullify
 
   # Indirect associations
 
@@ -13,5 +13,4 @@ class Category < ApplicationRecord
   def to_s
     category_name
   end
-
 end

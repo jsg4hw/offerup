@@ -6,8 +6,7 @@ class CategoryResource < ApplicationResource
 
   # Direct associations
 
-  has_many   :items
+  has_many :items
 
   # Indirect associations
-
 end
