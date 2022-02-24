@@ -27,7 +27,7 @@
     <%= f.label :category_id %>
 
     <!-- Input for category_id start -->
-    <%= f.text_field :category_id, class: "form-control" %>
+    <%= f.collection_select :category_id, Category.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for category_id end -->
   </div>
   <!-- Label and input for category_id end -->

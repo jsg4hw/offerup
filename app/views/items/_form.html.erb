@@ -68,7 +68,7 @@
 
     <%= f.label :category_id %>
     <!-- Input for category_id start -->
-    <%= f.number_field :category_id, class: category_class, placeholder: "Enter category" %>
+    <%= f.collection_select :category_id, Category.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for category_id end -->
     <% if category_was_invalid %>
       <% item.errors.full_messages_for(:category).each do |message| %>
