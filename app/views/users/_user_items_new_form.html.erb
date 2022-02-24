@@ -1,0 +1,71 @@
+<!-- Form item start -->
+<%= form_with(model: @item, local: true) do |f| %>
+<!-- Form item end -->
+
+  <!-- Label and input for title start -->
+  <div class="form-group">
+    <%= f.label :title %>
+
+    <!-- Input for title start -->
+    <%= f.text_field :title, class: "form-control" %>
+    <!-- Input for title end -->
+  </div>
+  <!-- Label and input for title end -->
+
+  <!-- Label and input for price start -->
+  <div class="form-group">
+    <%= f.label :price %>
+
+    <!-- Input for price start -->
+    <%= f.text_field :price, class: "form-control" %>
+    <!-- Input for price end -->
+  </div>
+  <!-- Label and input for price end -->
+
+  <!-- Label and input for category_id start -->
+  <div class="form-group">
+    <%= f.label :category_id %>
+
+    <!-- Input for category_id start -->
+    <%= f.text_field :category_id, class: "form-control" %>
+    <!-- Input for category_id end -->
+  </div>
+  <!-- Label and input for category_id end -->
+
+  <!-- Label and input for user_id start -->
+  <!-- Input for user_id start -->
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <!-- Input for user_id end -->
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for image start -->
+  <div class="form-group">
+    <%= f.label :image %>
+
+    <!-- Input for image start -->
+    <%= f.text_field :image, class: "form-control" %>
+    <!-- Input for image end -->
+  </div>
+  <!-- Label and input for image end -->
+
+  <!-- Label and input for item_location start -->
+  <div class="form-group">
+    <%= f.label :item_location %>
+
+    <!-- Input for item_location start -->
+    <%= f.text_field :item_location, class: "form-control" %>
+    <!-- Input for item_location end -->
+  </div>
+  <!-- Label and input for item_location end -->
+
+  <!-- Label and input for purchased start -->
+  <div class="form-check">
+    <!-- Input for purchased start -->
+    <%= f.check_box :purchased, class: "form-check-input" %>
+    <!-- Input for purchased end -->
+    <%= f.label :purchased, class: "form-check-label" %>
+  </div>
+  <!-- Label and input for purchased end -->
+
+  <%= f.submit "Create item", class: "btn btn-block btn-outline-secondary" %>
+<% end %>
