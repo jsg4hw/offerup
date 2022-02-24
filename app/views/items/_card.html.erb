@@ -51,16 +51,20 @@
 
       <!-- Edit link item start -->
       <div class="col">
-        <%= link_to edit_item_url(item), class: "btn btn-block btn-outline-secondary" do %>
-          <i class="fas fa-edit"></i>
+        <% if current_user == @item.user %>
+          <%= link_to edit_item_url(item), class: "btn btn-block btn-sm btn-outline-secondary" do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
         <% end %>
       </div>
       <!-- Edit link item end -->
 
       <!-- Delete link item start -->
       <div class="col">
-        <%= link_to item, method: :delete, data: { confirm: "Do you really want to delete this item?" }, class: "btn btn-block btn-outline-secondary" do %>
-          <i class="fas fa-trash-alt"></i>
+        <% if current_user == @item.user %>
+          <%= link_to item, method: :delete, data: { confirm: "Do you really want to delete this item?" }, class: "btn btn-block btn-outline-secondary" do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
         <% end %>
       </div>
       <!-- Delete link item end -->
