@@ -34,7 +34,11 @@
 
       <dt>Item location</dt>
       <!-- Display item_location start -->
-      <dd><%= item.item_location %></dd>
+      <dd>
+        <div>
+          <%= render partial: "items/one_photo_map" %>
+        </div>
+      </dd>
       <!-- Display item_location end -->
 
       <dt>Purchased</dt>

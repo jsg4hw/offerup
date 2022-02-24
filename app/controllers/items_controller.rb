@@ -6,6 +6,11 @@ class ItemsController < ApplicationController
   # GET /items
   def index
     @items = Item.all
+    @location_hash = Gmaps4rails.build_markers(@items.where.not(:item_location_latitude => nil)) do |item, marker|
+      marker.lat item.item_location_latitude
+      marker.lng item.item_location_longitude
+      marker.infowindow "<h5><a href='/items/#{item.id}'>#{item.title}</a></h5><small>#{item.item_location_formatted_address}</small>"
+    end
   end
 
   # GET /items/1
